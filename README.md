@@ -78,7 +78,7 @@
 
 # Generate view to display the day with the most errors
               CREATE VIEW most_errors AS
-              SELECT requests.date, err_percent.perc
-              FROM requests, err_percent, err_request
+              SELECT *
+              FROM err_percent
               WHERE err_percent.perc > 1
-              LIMIT 1;
+              ORDER BY err_percent.perc DESC; 
