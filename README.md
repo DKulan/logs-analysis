@@ -13,16 +13,16 @@
 
  To Run:
  1. Load the data onto the database
-  - psql -d news -f newsdata.sql
+    - psql -d news -f newsdata.sql
  
  2. Generate the views from file
-  - psql -d news -f create_views.sql
+    - psql -d news -f create_views.sql
  
  3. Connect to the database 
-  - psql -d news
+    - psql -d news
 
  4. Run the Python file
-  - python news_log.py
+    - python news_log.py
 
  5. You should now see the output of the queries!
 
