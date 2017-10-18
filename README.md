@@ -7,7 +7,7 @@
  Queries used: 
           
 
-         # Generate view to list the top articles
+# Generate view to list the top articles
 
               CREATE VIEW top_articles AS
               SELECT title, count(title) AS views
@@ -18,7 +18,7 @@
               LIMIT 3;
 
 
-	 # Generate view to list the top authors
+# Generate view to list the top authors
 
     	      CREATE VIEW top_authors AS
               SELECT name, count(title) AS views
@@ -29,7 +29,7 @@
               ORDER BY views DESC;
 
 
-	 # Generate view to list total requests for single day
+# Generate view to list total requests for single day
               CREATE VIEW requests AS
               SELECT count(*) as req, date(time) AS date
               FROM log
@@ -37,7 +37,7 @@
               ORDER BY req DESC;
 
 
-         # Generate view to display requests that are not OK
+# Generate view to display requests that are not OK
               CREATE VIEW err_requests AS
               SELECT count(*) as req, date(time) AS date
               FROM log "
@@ -46,7 +46,7 @@
               ORDER BY req DESC;
 
 
-         # Generate view to display percentage of errors for a given day
+# Generate view to display percentage of errors for a given day
               CREATE VIEW err_percent AS
               SELECT requests.date,
               round((100.0*err_requests.req)/requests.req,2) AS perc
@@ -55,7 +55,7 @@
               GROUP BY requests.date, err_requests.req, requests.req;
 
 
-         # Generate view to display the day with the most errors
+# Generate view to display the day with the most errors
               CREATE VIEW most_errors AS
               SELECT requests.date, err_percent.perc
               FROM requests, err_percent, err_request
