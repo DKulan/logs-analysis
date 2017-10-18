@@ -38,11 +38,6 @@ def generate_views():
     print("\n\n")
 
     # -- Question 3 --
-    c.execute("CREATE VIEW most_errors AS "
-              "SELECT * "
-              "FROM err_percent "
-              "WHERE err_percent.perc > 1 "
-              "ORDER BY err_percent.perc DESC; ")
     c.execute("SELECT * FROM most_errors;")
     print("Days with > 1% of requests resulting in errors")
     for(date, perc) in c.fetchall():
