@@ -4,6 +4,17 @@
               The program generates VIEWS that can be used to display statistical information
               for a news database.
 
+ To Install:  simply execute the python file in CML by using "python news_log.py", the views
+              should now be created in the "news" database and can be accessed by using the command:
+              
+              select * from top_articles; // for the top articles view
+              select * from top_authors;  // for the top authors view
+              select * from requests;     // for the requests view
+              select * from err_requests; // for total error requests view
+              select * from err_percent;  // for total error requests in percentage view
+              select * from most_errors;  // for the day with the most errors view
+
+
  Queries used: 
           
 
