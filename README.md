@@ -10,22 +10,24 @@
  - PostgreSQL 9.6
  - "News" database file (download: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
+
  To Run:
  1. Load the data onto the database
 	psql -d news -f newsdata.sql
  
- 2. Connect to the database 
+ 2. Generate the views from file
+        psql -d news -f create_views.sql
+ 
+ 3. Connect to the database 
         psql -d news
 
- 3. Run the Python file
+ 4. Run the Python file
         python news_log.py
 
- 4. Views are now made in the news database and output should be shown
+ 5. You should now see the output of the queries!
 
 
-
-# Queries used: 
-- The news_log.py should generate these views for you
+# Queries used:
           
 
 # Generate view to list the top articles
