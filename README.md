@@ -1,10 +1,10 @@
 *LOGS ANALYSIS* - UDACITY PROJECT
 
- Description: This project showcases the ability to use PostgreSQL queries in python. 
+ Description:  This project showcases the ability to use PostgreSQL queries in python. 
               The program generates VIEWS that can be used to display statistical information
               for a news database.
 
- To Install:  simply execute the python file in CML by using "python news_log.py", the views
+ To Install:   simply execute the python file in CML by using "python news_log.py", the views
               should now be created in the "news" database and can be accessed by using the command:
               
               select * from top_articles; // for the top articles view
