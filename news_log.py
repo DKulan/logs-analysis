@@ -23,7 +23,6 @@ def generate_views():
     # Connect to database
     db, c = connect(DB)
 
-
     # -- Question 1 --
     # Generate view to list the top articles
     c.execute("CREATE VIEW top_articles AS "
@@ -39,7 +38,6 @@ def generate_views():
         print("{}  -  {} views".format(title, views))
     print("\n\n")
 
-
     # -- Question 2 --
     # Generate view to list the top authors
     c.execute("CREATE VIEW top_authors AS "
@@ -54,7 +52,6 @@ def generate_views():
     for(name, views) in c.fetchall():
         print("{}  -  {} views".format(name, views))
     print("\n\n")
-    
 
     # Generate view to list total requests for single day
     c.execute("CREATE VIEW requests AS "
@@ -62,7 +59,6 @@ def generate_views():
               "FROM log "
               "GROUP BY date "
               "ORDER BY req DESC;")
-    
 
     # Generate view to display requests that are not OK
     c.execute("CREATE VIEW err_requests AS "
@@ -71,7 +67,6 @@ def generate_views():
               "WHERE status != '200 OK' "
               "GROUP BY date "
               "ORDER BY req DESC;")
-    
 
     # Generate view to display percentage of errors for a given day
     c.execute("CREATE VIEW err_percent AS "
@@ -81,7 +76,6 @@ def generate_views():
               "WHERE err_requests.date = requests.date "
               "GROUP BY requests.date, err_requests.req, requests.req; ")
 
-    
     # -- Question 3 --
     # Generate view to display the day with the most errors
     c.execute("CREATE VIEW most_errors AS "
@@ -95,7 +89,6 @@ def generate_views():
         print("{}  -  {}% errors".format(date.strftime("%B %d, %Y"), perc))
     print("\n\n")
 
-
     # Commit and close database
     db.commit()
     db.close()
@@ -103,4 +96,3 @@ def generate_views():
 
 if __name__ == "__main__":
     generate_views()
-
