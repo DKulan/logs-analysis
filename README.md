@@ -5,7 +5,7 @@
               for a news database.
 
  To Install:   simply execute the python file in CML by using "python news_log.py", the views
-              should now be created in the "news" database and can be accessed by using the command:
+              should now be created in the "news" database and can be viewed by using these commands:
               
               select * from top_articles; // for the top articles view
               select * from top_authors;  // for the top authors view
