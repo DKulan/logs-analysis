@@ -61,7 +61,7 @@
 # Generate view to display requests that are not OK
               CREATE VIEW err_requests AS
               SELECT count(*) as req, date(time) AS date
-              FROM log "
+              FROM log
               WHERE status != '200 OK'
               GROUP BY date
               ORDER BY req DESC;
@@ -78,7 +78,7 @@
 
 # Generate view to display the day with the most errors
               CREATE VIEW most_errors AS
-              SELECT requests.date, err_percent.perc
-              FROM requests, err_percent, err_request
+              SELECT *
+              FROM err_percent
               WHERE err_percent.perc > 1
-              LIMIT 1;
+              ORDER BY err_percent.perc DESC; 
