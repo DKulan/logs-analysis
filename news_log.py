@@ -14,7 +14,7 @@ def connect(db_name):
         c = db.cursor()
         return db, c
     except psycopg2.Error as e:
-        print "Unable to connect to database"
+        print("Unable to connect to database")
         sys.exit(1)
 
 
