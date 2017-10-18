@@ -61,7 +61,7 @@
 # Generate view to display requests that are not OK
               CREATE VIEW err_requests AS
               SELECT count(*) as req, date(time) AS date
-              FROM log "
+              FROM log
               WHERE status != '200 OK'
               GROUP BY date
               ORDER BY req DESC;
