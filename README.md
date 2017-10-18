@@ -23,7 +23,9 @@
  4. Views are now made in the news database and output should be shown
 
 
- Queries used: (The news_log.py should generate these views for you)
+
+# Queries used: 
+- The news_log.py should generate these views for you
           
 
 # Generate view to list the top articles
