@@ -3,19 +3,27 @@
  Description:  This project showcases the ability to use PostgreSQL queries in python. 
               The program generates VIEWS that can be used to display statistical information
               for a news database.
+ 
+ Requirements:
+ - Python 3x
+ - Psycopg2
+ - PostgreSQL 9.6
+ - "News" database file (download: https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
 
- To Install:   simply execute the python file in CML by using "python news_log.py", the views
-              should now be created in the "news" database and can be viewed by using these commands:
-              
-              select * from top_articles; // for the top articles view
-              select * from top_authors;  // for the top authors view
-              select * from requests;     // for the requests view
-              select * from err_requests; // for total error requests view
-              select * from err_percent;  // for total error requests in percentage view
-              select * from most_errors;  // for the day with the most errors view
+ To Run:
+ 1. Load the data onto the database
+	psql -d news -f newsdata.sql
+ 
+ 2. Connect to the database 
+        psql -d news
+
+ 3. Run the Python file
+        python news_log.py
+
+ 4. Views are now made in the news database and output should be shown
 
 
- Queries used: 
+ Queries used: (The news_log.py should generate these views for you)
           
 
 # Generate view to list the top articles
