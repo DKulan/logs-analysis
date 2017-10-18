@@ -7,7 +7,7 @@
  Queries used: 
           
 
-        # Generate view to list the top articles
+         # Generate view to list the top articles
 
               CREATE VIEW top_articles AS
               SELECT title, count(title) AS views
